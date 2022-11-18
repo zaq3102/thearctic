@@ -1,0 +1,13 @@
+.arrange-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.arrange-fullscreen {
+  align-self: end;
+  margin-right: 10vw;
+}
