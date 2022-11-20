@@ -80,7 +80,7 @@
 
 ##  기능 설명
 
-- [기능 설명](https://cheddar-knee-742.notion.site/d44e009efdf149c1a6021c41840b4dea)
+- [기능 설명](/exec/A607_시연시나리오.pdf)
 
 <br/>
 
