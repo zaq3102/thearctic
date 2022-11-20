@@ -35,7 +35,7 @@ public class RankService {
         });
         List<RankInfoRes> rankInfoResList = new ArrayList<>();
         for(RankInfo rankInfo : rankInfoList){
-            RankInfoRes res = RankInfoRes.of(rankInfo, rankInfo.getId()== getIp.getServerIp());
+            RankInfoRes res = RankInfoRes.of(rankInfo, rankInfo.getId().equals(getIp.getServerIp()));
             rankInfoResList.add(res);
         }
 
