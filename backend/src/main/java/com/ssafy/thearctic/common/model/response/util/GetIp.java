@@ -49,18 +49,24 @@ public class GetIp {
     }
 
     public static String getLocalMacAddress() {
-        String mac = null;
+        String result = null;
 
         try {
             InetAddress addr = InetAddress.getLocalHost();
             NetworkInterface ni = NetworkInterface.getByInetAddress(addr);
 
-            mac = ni.getHardwareAddress().toString();
+            byte[] mac = ni.getHardwareAddress();
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < mac.length; i++) {
+                sb.append(String.format("%02X%s", mac[i], (i < mac.length - 1) ? "-" : ""));
+            }
+            result = sb.toString();
         }
         catch (SocketException | UnknownHostException e ) {
             e.printStackTrace();
         }
 
-        return mac;
+        return result;
     }
 }
