@@ -8,6 +8,7 @@ import com.ssafy.thearctic.db.entity.RankInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -20,12 +21,12 @@ public class RankService {
 
     private GetIp getIp;
 
-    public void addRanking(RankInfoReq rankInfoReq){
-        RankInfo rankInfo = new RankInfo(getIp.getServerIp(), rankInfoReq.getNickName(), Float.parseFloat(rankInfoReq.getTime()));
+    public void addRanking(HttpServletRequest request, RankInfoReq rankInfoReq){
+        RankInfo rankInfo = new RankInfo(getIp.getClientIp(request), rankInfoReq.getNickName(), Float.parseFloat(rankInfoReq.getTime()));
         rankInfoRepository.save(rankInfo);
     }
 
-    public List<RankInfoRes> getRanking(){
+    public List<RankInfoRes> getRanking(HttpServletRequest request){
         List<RankInfo> rankInfoList = rankInfoRepository.findAll();
         rankInfoList.sort(new Comparator<RankInfo>() {
             @Override
@@ -35,7 +36,7 @@ public class RankService {
         });
         List<RankInfoRes> rankInfoResList = new ArrayList<>();
         for(RankInfo rankInfo : rankInfoList){
-            RankInfoRes res = RankInfoRes.of(rankInfo, rankInfo.getId().equals(getIp.getServerIp()));
+            RankInfoRes res = RankInfoRes.of(rankInfo, rankInfo.getIp().equals(getIp.getClientIp(request)));
             rankInfoResList.add(res);
         }
 

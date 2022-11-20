@@ -7,7 +7,10 @@ import com.ssafy.thearctic.common.model.response.BaseResponseBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -20,7 +23,8 @@ public class RankController {
     @PostMapping(value="/add")
     public ResponseEntity<?> saveData(@RequestBody RankInfoReq rankInfoReq) {
         try {
-            rankService.addRanking(rankInfoReq);
+            HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+            rankService.addRanking(request, rankInfoReq);
             return ResponseEntity.status(200).body(BaseResponseBody.of(200, "Success"));
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -33,7 +37,8 @@ public class RankController {
     @GetMapping()
     public ResponseEntity<?> loadData() {
         try {
-            List<RankInfoRes> rankInfoResList = rankService.getRanking();
+            HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+            List<RankInfoRes> rankInfoResList = rankService.getRanking(request);
             return ResponseEntity.status(200).body(rankInfoResList);
         } catch (Exception e) {
             System.out.println(e.getMessage());

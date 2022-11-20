@@ -6,6 +6,7 @@ import com.ssafy.thearctic.db.entity.GameDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -17,13 +18,14 @@ public class GameDataService {
 
     private GetIp getIp;
 
-    public void save(GameData gameData){
-        gameData.id = getIp.getServerIp();
+    public void save(HttpServletRequest request, GameData gameData){
+        gameData.id = getIp.getClientIp(request);
         gameDataRepository.save(gameData);
     }
 
-    public GameData load(){
-        return gameDataRepository.findById(getIp.getServerIp()).orElse(null);
+    public GameData load(HttpServletRequest request){
+        System.out.println(getIp.getClientIp(request));
+        return gameDataRepository.findById(getIp.getClientIp(request)).orElse(null);
     }
 
 }

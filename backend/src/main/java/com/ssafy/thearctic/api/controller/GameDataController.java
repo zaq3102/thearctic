@@ -6,6 +6,10 @@ import com.ssafy.thearctic.db.entity.GameData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/gamedata")
@@ -17,7 +21,8 @@ public class GameDataController {
     @PostMapping(value="/save")
     public ResponseEntity<?> saveData(@RequestBody GameData gameData) {
         try {
-            gameDataService.save(gameData);
+            HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+            gameDataService.save(request, gameData);
             return ResponseEntity.status(200).body(BaseResponseBody.of(200, "Success"));
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -30,7 +35,8 @@ public class GameDataController {
     @GetMapping("/load")
     public ResponseEntity<?> loadData() {
         try {
-            GameData gameData = gameDataService.load();
+            HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+            GameData gameData = gameDataService.load(request);
             return ResponseEntity.status(200).body(gameData);
         } catch (Exception e) {
             System.out.println(e.getMessage());
