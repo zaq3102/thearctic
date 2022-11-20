@@ -1,30 +1,29 @@
 package com.ssafy.thearctic.api.service;
 
-import com.ssafy.thearctic.api.request.UserReq;
-import com.ssafy.thearctic.common.model.response.BaseResponseBody;
-import com.ssafy.thearctic.db.entity.User;
-import com.ssafy.thearctic.db.entity.UserRepository;
+import com.ssafy.thearctic.common.model.response.util.GetIp;
+import com.ssafy.thearctic.db.entity.GameData;
+import com.ssafy.thearctic.db.entity.GameDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 @Service
 public class GameDataService {
 
     @Autowired
-    private UserRepository userRepository;
+    private GameDataRepository gameDataRepository;
 
-    public void save(UserReq userReq){
-        User user = new User(userReq.getName(), userReq.getAge());
-        userRepository.insert(user);
+    private GetIp getIp;
+
+    public void save(GameData gameData){
+        gameData.id = getIp.getServerIp();
+        gameDataRepository.save(gameData);
     }
 
-    public User load(){
-        return userRepository.findByName("happy");
+    public GameData load(){
+        return gameDataRepository.findById(getIp.getServerIp()).orElse(null);
     }
 
 }

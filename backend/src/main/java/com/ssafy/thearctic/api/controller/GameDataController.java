@@ -1,12 +1,9 @@
 package com.ssafy.thearctic.api.controller;
 
-import com.ssafy.thearctic.api.request.UserReq;
-import com.ssafy.thearctic.api.response.UserRes;
 import com.ssafy.thearctic.api.service.GameDataService;
 import com.ssafy.thearctic.common.model.response.BaseResponseBody;
-import com.ssafy.thearctic.db.entity.User;
+import com.ssafy.thearctic.db.entity.GameData;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,13 +15,9 @@ public class GameDataController {
     private GameDataService gameDataService;
 
     @PostMapping(value="/save")
-    public ResponseEntity<?> saveData(@RequestBody UserReq user) {
+    public ResponseEntity<?> saveData(@RequestBody GameData gameData) {
         try {
-            System.out.println("called by unity!!!!");
-//            System.out.println(user);
-//            User user = new User("happy");
-            System.out.println("user: " + user.getName() + ", " + user.getAge());
-            gameDataService.save(user);
+            gameDataService.save(gameData);
             return ResponseEntity.status(200).body(BaseResponseBody.of(200, "Success"));
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -37,8 +30,8 @@ public class GameDataController {
     @GetMapping("/load")
     public ResponseEntity<?> loadData() {
         try {
-            User user = gameDataService.load();
-            return ResponseEntity.status(200).body(UserRes.of(200, "Success", user));
+            GameData gameData = gameDataService.load();
+            return ResponseEntity.status(200).body(gameData);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return ResponseEntity.status(500).body(
