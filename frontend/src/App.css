@@ -1,0 +1,116 @@
+* {
+  font-family: "yg-jalnan";
+}
+
+.arrange-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.leaderboard-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+.arrange-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  margin-top: 1vh;
+}
+
+.game-button {
+}
+
+.refresh-button {
+}
+
+.ranking-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.me-icon {
+  width: 5vw;
+}
+
+.is-me {
+  background-color: rgba(255, 217, 0, 0.713);
+}
+
+.ranking-page-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.ranking {
+  margin-right: 1vw;
+}
+
+.ranking-top-3 {
+  display: flex;
+  align-items: end;
+  margin-top: 3vh;
+  margin-bottom: 4vh;
+}
+
+.ranking-top-3 > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+
+.leaderboard-title {
+  width: 50vw;
+}
+
+.ranking-name {
+  /* width: 20vw; */
+  /* overflow: auto; */
+}
+
+.first {
+  width: 15vw;
+}
+
+.second {
+  width: 15vw;
+}
+
+.third {
+  width: 15vw;
+}
+
+.trophy1 {
+  width: 15vw;
+}
+
+.trophy2 {
+  width: 10vw;
+}
+
+.trophy3 {
+  width: 5vw;
+}
+
+.leaderboard {
+  width: 50vw;
+}
+
+.ranking-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px black solid;
+  border-radius: 10px;
+  padding: 1vh;
+  margin: 1vh;
+}
