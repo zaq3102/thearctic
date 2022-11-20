@@ -80,7 +80,8 @@
 
 ##  기능 설명
 
-- [기능 설명](/exec/A607_시연시나리오.pdf)
+- [기능 설명_PDF](/exec/A607_시연시나리오.pdf)
+- [기능 설명_Notion](https://cheddar-knee-742.notion.site/d44e009efdf149c1a6021c41840b4dea)
 
 <br/>
 
