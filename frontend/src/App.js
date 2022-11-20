@@ -13,15 +13,16 @@ export default function App() {
 
 
   const { unityProvider, isLoaded, requestFullscreen, loadingProgression } = useUnityContext({
-    loaderUrl: "Build/BLT.loader.js",
-    dataUrl: "Build/BLT.data",
-    frameworkUrl: "Build/BLT.framework.js",
-    codeUrl: "Build/BLT.wasm",
+    loaderUrl: "Build/TheArcticBuild.loader.js",
+    dataUrl: "Build/TheArcticBuild.data",
+    frameworkUrl: "Build/TheArcticBuild.framework.js",
+    codeUrl: "Build/TheArcticBuild.wasm",
   });
 
   useEffect(() => {
     if (isLoaded) {
       let timer = setTimeout(() => {
+        setRankingStyle({ display: 'none' });
         setLoadingStyle({ display: 'none' });
         setUnityStyle({ display: 'block' });
       }, 3000);
