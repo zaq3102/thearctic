@@ -22,8 +22,8 @@ public class RankService {
     private GetIp getIp;
 
     public void addRanking(HttpServletRequest request, RankInfoReq rankInfoReq){
-//        RankInfo rankInfo = new RankInfo(getIp.getClientIp(request), rankInfoReq.getNickName(), Float.parseFloat(rankInfoReq.getTime()));
-        RankInfo rankInfo = new RankInfo(getIp.getLocalMacAddress(), rankInfoReq.getNickName(), Float.parseFloat(rankInfoReq.getTime()));
+        RankInfo rankInfo = new RankInfo(getIp.getClientIp(request), rankInfoReq.getNickName(), Float.parseFloat(rankInfoReq.getTime()));
+//        RankInfo rankInfo = new RankInfo(getIp.getLocalMacAddress(), rankInfoReq.getNickName(), Float.parseFloat(rankInfoReq.getTime()));
         rankInfoRepository.save(rankInfo);
     }
 
@@ -37,8 +37,8 @@ public class RankService {
         });
         List<RankInfoRes> rankInfoResList = new ArrayList<>();
         for(RankInfo rankInfo : rankInfoList){
-//            RankInfoRes res = RankInfoRes.of(rankInfo, rankInfo.getIp().equals(getIp.getClientIp(request)));
-            RankInfoRes res = RankInfoRes.of(rankInfo, rankInfo.getIp().equals(getIp.getLocalMacAddress()));
+            RankInfoRes res = RankInfoRes.of(rankInfo, rankInfo.getIp().equals(getIp.getClientIp(request)));
+//            RankInfoRes res = RankInfoRes.of(rankInfo, rankInfo.getIp().equals(getIp.getLocalMacAddress()));
             rankInfoResList.add(res);
         }
 

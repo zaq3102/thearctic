@@ -19,16 +19,16 @@ public class GameDataService {
     private GetIp getIp;
 
     public void save(HttpServletRequest request, GameData gameData){
-//        gameData.id = getIp.getClientIp(request);
-        gameData.id = getIp.getLocalMacAddress();
+        gameData.id = getIp.getClientIp(request);
+//        gameData.id = getIp.getLocalMacAddress();
         gameDataRepository.save(gameData);
     }
 
     public GameData load(HttpServletRequest request){
-//        System.out.println(getIp.getClientIp(request));
-//        return gameDataRepository.findById(getIp.getClientIp(request)).orElse(null);
-        System.out.println(getIp.getLocalMacAddress());
-        return gameDataRepository.findById(getIp.getLocalMacAddress()).orElse(null);
+        System.out.println(getIp.getClientIp(request));
+        return gameDataRepository.findById(getIp.getClientIp(request)).orElse(null);
+//        System.out.println(getIp.getLocalMacAddress());
+//        return gameDataRepository.findById(getIp.getLocalMacAddress()).orElse(null);
     }
 
 }
