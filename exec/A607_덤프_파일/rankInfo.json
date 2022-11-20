@@ -1,0 +1,53 @@
+[{
+  "_id": {
+    "$oid": "637a419b97e22d5103ead609"
+  },
+  "ip": "222.110.249.178",
+  "nickName": "migonzzang",
+  "time": 180.9486083984375,
+  "date": {
+    "$date": {
+      "$numberLong": "1668956571559"
+    }
+  },
+  "_class": "rank"
+},{
+  "_id": {
+    "$oid": "637a5539b23077517591f9a8"
+  },
+  "ip": "118.235.3.208",
+  "nickName": "GMbangsoon",
+  "time": 285.394287109375,
+  "date": {
+    "$date": {
+      "$numberLong": "1668961593303"
+    }
+  },
+  "_class": "rank"
+},{
+  "_id": {
+    "$oid": "637a5ddbb23077517591f9a9"
+  },
+  "ip": "106.101.131.232",
+  "nickName": "GMpigon",
+  "time": 240.34829711914062,
+  "date": {
+    "$date": {
+      "$numberLong": "1668963803827"
+    }
+  },
+  "_class": "rank"
+},{
+  "_id": {
+    "$oid": "637a5f8ab23077517591f9aa"
+  },
+  "ip": "222.110.249.178",
+  "nickName": "GMdbwowo",
+  "time": 276.0946960449219,
+  "date": {
+    "$date": {
+      "$numberLong": "1668964234545"
+    }
+  },
+  "_class": "rank"
+}]
