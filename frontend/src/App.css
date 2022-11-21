@@ -11,6 +11,10 @@
   height: 100vh;
 }
 
+.arrange-buttons-left {
+  display: flex;
+}
+
 .leaderboard-page {
   display: flex;
   flex-direction: column;
@@ -27,10 +31,10 @@
 }
 
 .game-button {
+  width: 150px;
 }
 
-.refresh-button {
-}
+.refresh-button {}
 
 .ranking-buttons {
   display: flex;
@@ -50,7 +54,8 @@
   flex-direction: column;
 }
 
-.ranking {
+.ranking,
+.feadback {
   margin-right: 1vw;
 }
 
@@ -61,7 +66,7 @@
   margin-bottom: 4vh;
 }
 
-.ranking-top-3 > div {
+.ranking-top-3>div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,4 +118,29 @@
   border-radius: 10px;
   padding: 1vh;
   margin: 1vh;
+}
+
+.notice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+.notice-content {
+  margin-top: 2vh;
+}
+
+.version {
+  margin-bottom: 10vh;
+}
+
+.first-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.first-video {
+  margin-top: 1vh;
 }
