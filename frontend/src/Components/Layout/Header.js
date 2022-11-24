@@ -22,7 +22,7 @@ export default function Header() {
               <li>
                 <Link
                   to="game"
-                  className="block py-2 pr-4 pl-3 text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400"
+                  className="block py-2 pr-4 pl-3 text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-indigo-900"
                 >
                   게임 플레이
                 </Link>
@@ -49,7 +49,7 @@ export default function Header() {
                   <a
                     href="https://forms.gle/c6btR3qxQQwZqgMJA"
                     target="_blank"
-                    className="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-800 border-blue-800 hover:border-transparent hover:text-white hover:bg-blue-800 mt-4 lg:mt-0"
+                    className="inline-block text-sm px-4 py-2 leading-none border rounded text-[#101B48] border-[#101B48] hover:border-transparent hover:text-white hover:bg-[#101B48] mt-4 lg:mt-0"
                   >
                     피드백 보내기
                   </a>
