@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import ArcticMain from "../Assets/3d_arctic.png";
 import SadPolarBear from "../Assets/sad_polarbear.png";
 
 export default function Home() {

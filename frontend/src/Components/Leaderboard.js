@@ -42,7 +42,7 @@ export default function LeaderBoard(props) {
             명예의 전당
           </span>
         </h1> */}
-        <h1 className="mb-10 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-4xl">
+        <h1 className="mb-10 text-3xl font-extrabold text-gray-900 dark:text-black md:text-5xl lg:text-4xl">
           명예의 전당
         </h1>
       </div>

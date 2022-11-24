@@ -9,12 +9,12 @@ export default function Notice() {
             공지사항
           </span>
         </h1> */}
-      <h1 className="mb-10 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-4xl">
+      <h1 className="mb-10 text-3xl font-extrabold text-gray-900 dark:text-black md:text-5xl lg:text-4xl">
         공지사항
       </h1>
       <div className="leaderboard max-w-full">
-        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead className="text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+        <table className="w-full text-sm text-left text-gray-500 dark:text-white-400">
+          <thead className="text-gray-700 uppercase bg-gray-100 dark:bg-white-700 dark:text-white-400">
             <tr>
               <th
                 scope="col"

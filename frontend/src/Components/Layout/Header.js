@@ -30,7 +30,7 @@ export default function Header() {
               <li>
                 <Link
                   to="leaderboard"
-                  className="block py-2 pr-4 pl-3 text-gray-700"
+                  className="block py-2 pr-4 pl-3 text-gray-700 dark:text-white"
                 >
                   명예의 전당
                 </Link>
@@ -38,7 +38,7 @@ export default function Header() {
               <li>
                 <Link
                   to="notice"
-                  className="block py-2 pr-4 pl-3 text-gray-700"
+                  className="block py-2 pr-4 pl-3 text-gray-700 dark:text-white"
                 >
                   공지사항
                 </Link>
@@ -49,7 +49,7 @@ export default function Header() {
                   <a
                     href="https://forms.gle/c6btR3qxQQwZqgMJA"
                     target="_blank"
-                    className="inline-block text-sm px-4 py-2 leading-none border rounded text-[#101B48] border-[#101B48] hover:border-transparent hover:text-white hover:bg-[#101B48] mt-4 lg:mt-0"
+                    className="inline-block text-sm px-4 py-2 leading-none border rounded text-[#101B48] border-[#101B48] hover:border-transparent hover:text-white hover:bg-[#101B48] mt-4 lg:mt-0 dark:text-white dark:border-white dark:hover:bg-gray-700"
                   >
                     피드백 보내기
                   </a>

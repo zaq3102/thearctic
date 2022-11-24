@@ -8,12 +8,12 @@ export default function Game() {
   const [LoadingStyle, setLoadingStyle] = useState({ display: "block" });
   const [UnityStyle, setUnityStyle] = useState({ display: "none" });
 
-  const { unityProvider, isLoaded, requestFullscreen, loadingProgression } =
+  const { unityProvider, isLoaded, requestFullscreen, loadingProgression, UNSAFE__detachAndUnloadImmediate: detachAndUnloadImmediate } =
     useUnityContext({
-      loaderUrl: "Build/TheArcticUpgrade1.loader.js",
-      dataUrl: "Build/TheArcticUpgrade1.data",
-      frameworkUrl: "Build/TheArcticUpgrade1.framework.js",
-      codeUrl: "Build/TheArcticUpgrade1.wasm",
+      loaderUrl: "Build/TheArcticBuild.loader.js",
+      dataUrl: "Build/TheArcticBuild.data",
+      frameworkUrl: "Build/TheArcticBuild.framework.js",
+      codeUrl: "Build/TheArcticBuild.wasm",
     });
 
   useEffect(() => {
@@ -22,12 +22,12 @@ export default function Game() {
         setLoadingStyle({ display: "none" });
         setUnityStyle({ display: "block" });
       }, 3000);
-      return () => {
+      return async () => {
         clearTimeout(timer);
+        detachAndUnloadImmediate();
       };
     }
   }, [isLoaded]);
-
 
   return (
     <div>
