@@ -34,7 +34,8 @@
   width: 150px;
 }
 
-.refresh-button {}
+.refresh-button {
+}
 
 .ranking-buttons {
   display: flex;
@@ -66,7 +67,7 @@
   margin-bottom: 4vh;
 }
 
-.ranking-top-3>div {
+.ranking-top-3 > div {
   display: flex;
   flex-direction: column;
   align-items: center;

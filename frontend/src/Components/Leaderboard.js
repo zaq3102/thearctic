@@ -8,11 +8,7 @@ import trophy3 from "../Assets/trophy3.png";
 export default function LeaderBoard(props) {
   const [rankingList, setRankingList] = useState([]);
   const [myRank, setMyRank] = useState([false, false, false]);
-  const [rankingListTop3, setRankingListTop3] = useState([
-    { nickName: "첫", time: "00:00:01" },
-    { nickName: "두", time: "00:00:02" },
-    { nickName: "셋", time: "00:00:03" },
-  ]);
+  const [rankingListTop3, setRankingListTop3] = useState([]);
 
   const getRankings = async () => {
     try {
@@ -38,14 +34,6 @@ export default function LeaderBoard(props) {
     getRankings();
   }, []);
 
-  const changePage = () => {
-    if (props.isLoaded) {
-      props.clickedGame();
-    } else {
-      props.clickedLoading();
-    }
-  };
-
   return (
     <div className="leaderboard-page">
       <div className="ranking-page-top">
@@ -61,22 +49,22 @@ export default function LeaderBoard(props) {
       <div className="ranking-top-3">
         <div className="second">
           {myRank[1] ? <img className="me-icon" src={me} alt="me" /> : <></>}
-          <div className="text-xl">{rankingListTop3[1].nickName}</div>
-          <div className="text-base">{rankingListTop3[1].time}</div>
+          <div className="text-xl">{rankingListTop3[1]?.nickName}</div>
+          <div className="text-base">{rankingListTop3[1]?.time}</div>
           <img className="trophy2" src={trophy2} alt="trophy-second" />
         </div>
         <div className="first">
           {myRank[0] ? <img className="me-icon" src={me} alt="me" /> : <></>}
           <div className="text-xl ranking-name">
-            {rankingListTop3[0].nickName}
+            {rankingListTop3[0]?.nickName}
           </div>
-          <div className="text-base">{rankingListTop3[0].time}</div>
+          <div className="text-base">{rankingListTop3[0]?.time}</div>
           <img className="trophy1" src={trophy1} alt="trophy-first" />
         </div>
         <div className="third">
           {myRank[2] ? <img className="me-icon" src={me} alt="me" /> : <></>}
-          <div className="text-xl">{rankingListTop3[2].nickName}</div>
-          <div className="text-base">{rankingListTop3[2].time}</div>
+          <div className="text-xl">{rankingListTop3[2]?.nickName}</div>
+          <div className="text-base">{rankingListTop3[2]?.time}</div>
           <img className="trophy3" src={trophy3} alt="trophy-third" />
         </div>
       </div>

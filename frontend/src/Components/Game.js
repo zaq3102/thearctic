@@ -3,14 +3,10 @@ import React, { useEffect, useState } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import FullScreen from "../Assets/fullscreen.png";
 import Loading from "../Assets/Loading.gif";
-import Leaderboard from "./Leaderboard";
-import Notice from "../Components/Notice";
 
 export default function Game() {
   const [LoadingStyle, setLoadingStyle] = useState({ display: "block" });
   const [UnityStyle, setUnityStyle] = useState({ display: "none" });
-  const [RankingStyle, setRankingStyle] = useState({ display: "none" });
-  const [NoticeStyle, setNoticeStyle] = useState({ display: "none" });
 
   const { unityProvider, isLoaded, requestFullscreen, loadingProgression } =
     useUnityContext({
@@ -23,10 +19,8 @@ export default function Game() {
   useEffect(() => {
     if (isLoaded) {
       let timer = setTimeout(() => {
-        setRankingStyle({ display: "none" });
         setLoadingStyle({ display: "none" });
         setUnityStyle({ display: "block" });
-        setNoticeStyle({ display: "none" });
       }, 3000);
       return () => {
         clearTimeout(timer);
@@ -34,41 +28,12 @@ export default function Game() {
     }
   }, [isLoaded]);
 
-  const clickedLeaderBoard = () => {
-    setLoadingStyle({ display: "none" });
-    setUnityStyle({ display: "none" });
-    setRankingStyle({ display: "block" });
-    setNoticeStyle({ display: "none" });
-  };
-
-  const clickedGame = () => {
-    setLoadingStyle({ display: "none" });
-    setUnityStyle({ display: "block" });
-    setRankingStyle({ display: "none" });
-    setNoticeStyle({ display: "none" });
-  };
-
-  const clickedLoading = () => {
-    setLoadingStyle({ display: "block" });
-    setUnityStyle({ display: "none" });
-    setRankingStyle({ display: "none" });
-    setNoticeStyle({ display: "none" });
-  };
-
-  const clickedNotice = () => {
-    setLoadingStyle({ display: "none" });
-    setUnityStyle({ display: "none" });
-    setRankingStyle({ display: "none" });
-    setNoticeStyle({ display: "block" });
-  };
 
   return (
     <div>
       <div style={LoadingStyle}>
         <LoadingComponent
           loadingProgression={loadingProgression}
-          RankingClicked={clickedLeaderBoard}
-          NoticeClicked={clickedNotice}
         />
       </div>
       <div style={UnityStyle}>
@@ -76,22 +41,6 @@ export default function Game() {
         <UnityComponent
           unityProvider={unityProvider}
           requestFullscreen={requestFullscreen}
-          RankingClicked={clickedLeaderBoard}
-          NoticeClicked={clickedNotice}
-        />
-      </div>
-      <div style={RankingStyle}>
-        <Leaderboard
-          clickedGame={clickedGame}
-          clickedLoading={clickedLoading}
-          isLoaded={isLoaded}
-        />
-      </div>
-      <div style={NoticeStyle}>
-        <Notice
-          clickedGame={clickedGame}
-          clickedLoading={clickedLoading}
-          isLoaded={isLoaded}
         />
       </div>
     </div>
@@ -100,12 +49,11 @@ export default function Game() {
 
 function LoadingComponent(props) {
   return (
-    <div className="arrange-center">
+    <div className="arrange-center-game">
       <img
         src={Loading}
         alt="loading-gif"
-        style={{ width: 800, height: 450, marginBottom: "1vh" }}
-      ></img>
+        style={{ width: '120vh', height: '67.5vh', marginBottom: "1vh" }} />
       <div className="bg-gray-600 rounded-full" style={{ width: "50vw" }}>
         <div
           className="bg-[#101B48] text-xl font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
@@ -123,16 +71,14 @@ function UnityComponent(props) {
     props.requestFullscreen(true);
   };
   return (
-    <div className="arrange-center">
+    <div className="arrange-center-game">
       <Unity
-        style={{ width: 1000, height: 562.5 }}
+        style={{ width: '120vh', height: '67.5vh' }}
         unityProvider={props.unityProvider}
       />
-      <div className="arrange-buttons">
-        <button onClick={handleClickEnterFullscreen}>
-          <img src={FullScreen} style={{ width: "3vw" }}></img>
-        </button>
-      </div>
+      <button onClick={handleClickEnterFullscreen} className="fullscreen-btn">
+        <img src={FullScreen} style={{ width: "3vw" }} alt="fullscreen-button"></img>
+      </button>
     </div>
   );
 }

@@ -68,7 +68,7 @@ export default function Notice() {
                 2
               </th>
               <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                <Link to="3">2022년 11월 22일 릴리즈 공지</Link>
+                <Link to="2">2022년 11월 22일 릴리즈 공지</Link>
               </td>
               <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 2022. 11. 22
@@ -82,7 +82,7 @@ export default function Notice() {
                 1
               </th>
               <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                <Link to="2">2022년 11월 21일 릴리즈 공지</Link>
+                <Link to="3">2022년 11월 21일 릴리즈 공지</Link>
               </td>
               <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 2022. 11. 21

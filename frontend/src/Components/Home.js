@@ -23,9 +23,11 @@ export default function Home() {
               Play The Arctic, <br />
               Save The Arctic
             </h1>
+            <p className="leading-normal text-l">
+              멀게만 느껴지는 환경 문제,
+            </p>
             <p className="leading-normal text-l mb-8">
-              멀게만 느껴지는 환경 문제, The Arctic을 플레이하고 함께
-              해결해봐요!
+              The Arctic을 플레이하고 함께 해결해봐요!
             </p>
             {/* <button className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold my-6 py-4 px-8 border focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
               플레이
