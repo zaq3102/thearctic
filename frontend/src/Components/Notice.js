@@ -40,7 +40,21 @@ export default function Notice() {
                 참고
               </th>
               <td className="py-4 px-6 font-medium text-blue-800 whitespace-nowrap dark:text-white">
-                <Link to="0">스피드런 예시 영상</Link>
+                <Link to="0">The Arctic 홍보 영상</Link>
+              </td>
+              <td className="py-4 px-6 font-medium text-blue-800 whitespace-nowrap dark:text-white">
+                2022. 11. 21
+              </td>
+            </tr>
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <th
+                scope="row"
+                className="py-4 px-6 font-medium text-blue-800 whitespace-nowrap dark:text-white"
+              >
+                참고
+              </th>
+              <td className="py-4 px-6 font-medium text-blue-800 whitespace-nowrap dark:text-white">
+                <Link to="1">스피드런 예시 영상</Link>
               </td>
               <td className="py-4 px-6 font-medium text-blue-800 whitespace-nowrap dark:text-white">
                 2022. 11. 21
@@ -54,7 +68,7 @@ export default function Notice() {
                 2
               </th>
               <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                <Link to="2">2022년 11월 22일 릴리즈 공지</Link>
+                <Link to="3">2022년 11월 22일 릴리즈 공지</Link>
               </td>
               <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 2022. 11. 22
@@ -68,7 +82,7 @@ export default function Notice() {
                 1
               </th>
               <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                <Link to="1">2022년 11월 21일 릴리즈 공지</Link>
+                <Link to="2">2022년 11월 21일 릴리즈 공지</Link>
               </td>
               <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 2022. 11. 21
