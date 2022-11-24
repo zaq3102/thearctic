@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Home from './Components/Home';
-import Main from './Components/Main';
-import All from './Routes/All';
+import * as React from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./Components/Home";
+import Main from "./Components/Main";
+import All from "./Routes/All";
 
 const App = () => {
   return (

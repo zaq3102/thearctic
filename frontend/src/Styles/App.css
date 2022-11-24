@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 20vh;
 }
 
 .arrange-buttons-left {
@@ -33,7 +34,8 @@
   width: 150px;
 }
 
-.refresh-button {}
+.refresh-button {
+}
 
 .ranking-buttons {
   display: flex;
@@ -65,7 +67,7 @@
   margin-bottom: 4vh;
 }
 
-.ranking-top-3>div {
+.ranking-top-3 > div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,15 +96,15 @@
 }
 
 .trophy1 {
-  width: 15vw;
-}
-
-.trophy2 {
   width: 10vw;
 }
 
+.trophy2 {
+  width: 7vw;
+}
+
 .trophy3 {
-  width: 5vw;
+  width: 4vw;
 }
 
 .leaderboard {
@@ -142,4 +144,14 @@
 
 .first-video {
   margin-top: 1vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.contentWrapper {
+  flex: 1;
 }
